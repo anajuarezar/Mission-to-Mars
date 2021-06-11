@@ -30,8 +30,4 @@ def scrape():
     featured_image_url = url + relative_image_path
     browser.quit()
 
-    return
-
-    news_title,
-    news_p,
-    featured_image_url
+    return news_title, news_p, featured_image_url
