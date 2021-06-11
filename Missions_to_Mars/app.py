@@ -12,6 +12,19 @@ mongo = PyMongo(app, uri="mongodb://localhost:27017/mars_app")
 client = pymongo.MongoClient(conn)
 
 
+@app.route("/")
+def home():
+
+    # Find one record of data from the mongo database
+    news_title = list(mongo.db.collection.find)[0]
+    news_par =  list(mongo.db.collection.find)[1]
+    featured_im = list(mongo.db.collection.find)[2]
+
+
+    # Return template and data
+    return render_template("index.html", news_title=news_title, news_par=news_par, featured_im=featured_im)
+
+
 @app.route("/scrape")
 def scrape():
 
