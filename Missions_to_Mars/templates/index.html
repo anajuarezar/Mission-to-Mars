@@ -7,24 +7,25 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Mission to Mars</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 
 
 <body>
-    <div class="container-fluid">
+    <div class="container-fluid" style="padding-left: 30px; padding-right: 30px;">
       <div class="jumbotron text-center">
         <h1><strong>Mission to Mars</strong></h1>
         <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape New Data</a></p>
       </div>
     </div>
-    <div class="news">
+    <div class="news" style="padding-left: 35px;">
         <h3><strong>Latest Mars News</strong></h3>
         <h4><strong>{{ mars.news_title }}</strong></h4>
         <p>{{ mars.news_p }}</p>
     </div>
     <div class="container">
-        <div class="row">
-            <div class="col-md-8">
+        <div class="row" >
+            <div class="col-md-8" >
                 <section id="ft image">
                     <h3><strong>Feature Marse Image</strong></h3>
                     <section>
@@ -33,7 +34,48 @@
                 </section>
             </div>
             <div class="col-md-4">
-                
+                <h4><strong>Mars Facts</strong></h4>
+                <table border="1" frame="2" class="dataframe table-striped" style="height: 400px;">
+                    <thead>
+                      <tr style="text-align: right;">
+                        <th>Mars - Earth Comparison</th>
+                        <th>Mars</th>
+                        <th>Earth</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td><strong>Diameter:</strong></td>
+                        <td>6,779 km</td>
+                        <td>12,742 km</td>
+                      </tr>
+                      <tr>
+                        <td><strong>Mass:</strong></td>
+                        <td>6.39 × 10^23 kg</td>
+                        <td>5.97 × 10^24 kg</td>
+                      </tr>
+                      <tr>
+                        <td><strong>Moons:</strong></td>
+                        <td>2</td>
+                        <td>1</td>
+                      </tr>
+                      <tr>
+                        <td><strong>Distance from Sun:</strong></td>
+                        <td>227,943,824 km</td>
+                        <td>149,598,262 km</td>
+                      </tr>
+                      <tr>
+                        <td><strong>Length of Year:</strong></td>
+                        <td>687 Earth days</td>
+                        <td>365.24 days</td>
+                      </tr>
+                      <tr>
+                        <td><strong>Temperature:</strong></td>
+                        <td>-87 to -5 °C</td>
+                        <td>-88 to 58°C</td>
+                      </tr>
+                    </tbody>
+                  </table>
             </div>
         </div>
     </div>
