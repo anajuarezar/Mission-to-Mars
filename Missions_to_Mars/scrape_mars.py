@@ -31,37 +31,44 @@ def scrape():
     except: 
         featured_image_url = 'https://spaceimages-mars.com/image/featured/mars1.jpg'
 
-    # url = 'https://marshemispheres.com/'
-    # browser.visit(url)
-    # html = browser.html
-    # soup = BeautifulSoup(html, 'html.parser')
-
-    # hemisphere_image_urls = []
-    # items = soup.find_all('div', class_='item')
-
-    # for item in items:
-    #     title = item.find('div', class_='description').find('a').find('h3').text
-    #     url_path = item.find('a')['href']
-    #     original_url = 'https://marshemispheres.com/'
-    #     image_url = original_url + url_path
-    #     browser.visit(image_url)
-    #     html = browser.html
-    #     soup = BeautifulSoup(html, 'html.parser')
-    #     image_path = soup.find('div', class_='downloads').find('ul').find('li').find('a')['href']
-    #     image = original_url + image_path 
-    #     hemisphere_image_urls.append({'title': title, 'img_url': image})
     
-    # browser.quit()
+    try: 
+        url = 'https://marshemispheres.com/'
+        browser.visit(url)
+        html = browser.html
+        soup = BeautifulSoup(html, 'html.parser')
+
+        hemisphere_image_urls = []
+        items = soup.find_all('div', class_='item')
+
+        for item in items:
+            title = item.find('div', class_='description').find('a').find('h3').text
+            url_path = item.find('a')['href']
+            original_url = 'https://marshemispheres.com/'
+            image_url = original_url + url_path
+            browser.visit(image_url)
+            html = browser.html
+            soup = BeautifulSoup(html, 'html.parser')
+            image_path = soup.find('div', class_='downloads').find('ul').find('li').find('a')['href']
+            image = original_url + image_path 
+            hemisphere_image_urls.append({'title': title, 'img_url': image})
+    
+        browser.quit()
+    except:
+        hemisphere_image_urls = [
+            {'title': 'Cerberus Hemisphere Enhanced', 'img_url': 'https://marshemispheres.com/images/full.jpg'}, 
+            {'title': 'Schiaparelli Hemisphere Enhanced', 'img_url': 'https://marshemispheres.com/images/schiaparelli_enhanced-full.jpg'}, 
+            {'title': 'Syrtis Major Hemisphere Enhanced', 'img_url': 'https://marshemispheres.com/images/syrtis_major_enhanced-full.jpg'}, 
+            {'title': 'Valles Marineris Hemisphere Enhanced', 'img_url': 'https://marshemispheres.com/images/valles_marineris_enhanced-full.jpg'}
+            ]
 
 
     mars_data = {
         "news_title": news_title,
         "news_p": news_p,
         "featured_image_url": featured_image_url,
-        #"hemisphere_image_urls": hemisphere_image_urls
+        "hemisphere_image_urls": hemisphere_image_urls
         }
-        
-    print(mars_data)
+    
 
     return mars_data
-scrape()

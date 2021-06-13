@@ -19,8 +19,8 @@
     </div>
     <div class="news" style="padding-left: 35px;">
         <h3><strong>Latest Mars News</strong></h3>
-        <h4><strong>{{ mars.news_title }}</strong></h4>
-        <p>{{ mars.news_p }}</p>
+        <h4><strong>{{ mars_data.news_title }}</strong></h4>
+        <p>{{ mars_data.news_p }}</p>
     </div>
     <div class="container">
         <div class="row" >
@@ -28,7 +28,7 @@
                 <section id="ft image">
                     <h3><strong>Feature Mars Image</strong></h3>
                     <section>
-                    <img id="feature" src="" alt="">
+                    <img id="feature" src="{{ mars_data.featured_image_url }}" alt="">
                     </section>
                 </section>
             </div>
@@ -79,6 +79,7 @@
         </div>
     </div>
 
+    {% for image in mars_data.hemisphere_image_urls %}
     <div class="container hemisphere">
         <div class="row">
             <div class="col-md-12">
@@ -87,36 +88,34 @@
                 </section>
                 <div class="card-group">
                   <div class="card">
-                    <img src="..." class="card-img-top" alt="...">
+                    <img src="{{ image.img_url }}" class="card-img-top" alt="...">
                     <div class="card-body">
-                      <h5 class="card-title">Card title</h5>
-                      <p class="card-text">This is a wider card with supportin.</p>
+                      <h5 class="card-title">{{ image.title }}</h5>
                     </div>
                   </div>
                   <div class="card">
-                    <img src="..." class="card-img-top" alt="...">
+                    <img src="{{ image.img_url }}" class="card-img-top" alt="...">
                     <div class="card-body">
-                      <h5 class="card-title">Card title</h5>
-                      <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+                      <h5 class="card-title">{{ image.title }}</h5>
                     </div>
                   </div>
                   <div class="card">
-                    <img src="..." class="card-img-top" alt="...">
+                    <img src="{{ image.img_url }}" class="card-img-top" alt="...">
                     <div class="card-body">
-                      <h5 class="card-title">Card title</h5>
-                      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional.</p>
+                      <h5 class="card-title">{{ image.title }}</h5>
                     </div>
                   </div>
                     <div class="card">
-                      <img src="..." class="card-img-top" alt="...">
+                      <img src="{{ image.img_url }}" class="card-img-top" alt="...">
                       <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. </p>
+                        <h5 class="card-title">{{ image.title }}</h5>
                       </div>
                   </div>
+                </div>
+              </div>
             </div>
-        </div>
-    </div>
+          </div>
+          {% endfor %}
 
 
   </body>
