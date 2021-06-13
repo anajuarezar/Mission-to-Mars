@@ -79,28 +79,46 @@
         </div>
     </div>
     
-    {% for image in mars_data.hemisphere_image_urls %}
-    <div class="horizontal" style="display: inline-block;">
-    <div class="container hemisphere" style="display: flex; justify-content: center;" >
-      <div class="row">
-            <div class="col-md-3">
-                <section id="hem images" style="text-align: center;">
+
+    <div class="container hemisphere" >
+      <div class="row col-md-3" style="display: inline-flex;">
+                <section id="hem images">
                     <h3><strong>Mars Hemisphere</strong></h3>
                 </section>
-                
                   <div class="card">
-                    <img src="{{ image.img_url }}" class="card-img-top" alt="..." style="text-align: center;">
+                    <img src="{{ mars_data.hemisphere_image_urls.0 }}" class="card-img-top" alt="..." style="text-align: center;">
                     <div class="card-body">
-                      <h5 class="card-title">{{ image.title }}</h5>
-                    </div>
-                  </div>
+                      <h5 class="card-title">{{ mars_data.title.0 }}</h5>
                 </div>
               </div>
             </div>
+            <div class="row col-md-3" style="display: inline-flex;">
+                <div class="card">
+                  <img src="{{ mars_data.hemisphere_image_urls.1 }}" class="card-img-top" alt="..." style="text-align: center;">
+                  <div class="card-body">
+                    <h5 class="card-title">{{ mars_data.title.1 }}</h5>
+              </div>
+            </div>
+          </div>
+          <div class="row col-md-3" style="display: inline-flex;">
+              <div class="card">
+                <img src="{{ ars_data.hemisphere_image_urls.2 }}" class="card-img-top" alt="..." style="text-align: center;">
+                <div class="card-body">
+                  <h5 class="card-title">{{ mars_data.title.2 }}</h5>
+            </div>
           </div>
         </div>
-        <br>
-        {% endfor %}
+        <div class="row col-md-3" style="display: inline-flex;">
+            <div class="card">
+              <img src="{{ ars_data.hemisphere_image_urls.3 }}" class="card-img-top" alt="..." style="text-align: center;">
+              <div class="card-body">
+                <h5 class="card-title">{{ mars_data.title.3 }}</h5>
+          </div>
+        </div>
+      </div>
+          </div>
+
+
 
 
   </body>
