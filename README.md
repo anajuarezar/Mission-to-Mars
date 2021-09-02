@@ -15,15 +15,25 @@ In this section, we were required to scrap several pages, each in a differente w
 
 ### NASA Mars News
 In the first one, I used splinter. I went into the div section that contained the first news and extract both the header and the paragraph.
+![alt text](https://github.com/anajuarezar/Mission-to-Mars/blob/main/Missions_to_Mars/Screenshots/HTML_1_crop.png)
 
 ### JPL Mars Space Images - Featured Image
 This second one was a litle trickier, I had to extract the source code to an image and create the url for it. I, again, used splinter and created the path to the image. Then y extracted the code, assigned to a variable and then I created the url.
 
+![alt text](https://github.com/anajuarezar/Mission-to-Mars/blob/main/Missions_to_Mars/Screenshots/ft_image.png)
+
+
 ### Mars Facts
 In Mars Facts, I used pandas. This was relatibly simple since I only used pandas to read the url, extract the tables it contained, choose the one I wanted and then converted it to html.
 
+![alt text](https://github.com/anajuarezar/Mission-to-Mars/blob/main/Missions_to_Mars/Screenshots/mars_facts.png)
+
 ### Mars Hemispheres
 This last section was considerably more difficult. In order to complete it, I used splinter to set up the url. Then I created an empty list and chose the first part of the path to the images. Since this was inside another web page, I created a loop that first obtained the title of the image in the main page, then went into the download page. There I constructed the path to the src code and append all to the list. Since it was a different page, I had to use beautiful soup on this page again. 
+
+
+![alt text](https://github.com/anajuarezar/Mission-to-Mars/blob/main/Missions_to_Mars/Screenshots/hemispheres.png)
+
 
 
 ## Step 2 - MongoDB and Flask Application
