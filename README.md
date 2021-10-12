@@ -1,4 +1,4 @@
-# Web Scraping Homework - Mission to Mars
+# Web Scraping - Mission to Mars
 For this assignment, we were instructed to scrap specific pieces of information from several sites related to Mars. Once this is done, we are suppose to create a scrape function and render a template to, finally, present it in a html.
 The assignment was divides into two sections:
 *Scrapping
